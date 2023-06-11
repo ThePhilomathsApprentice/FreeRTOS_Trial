@@ -50,7 +50,6 @@ SPI_HandleTypeDef hspi1;
 
 osThreadId defaultTaskHandle;
 osThreadId LED_1000Handle;
-osThreadId LED_400Handle;
 /* USER CODE BEGIN PV */
 
 /* USER CODE END PV */
@@ -63,7 +62,6 @@ static void MX_I2S3_Init(void);
 static void MX_SPI1_Init(void);
 void StartDefaultTask(void const * argument);
 void StartTask02(void const * argument);
-void StartTask03(void const * argument);
 
 /* USER CODE BEGIN PFP */
 
@@ -133,10 +131,6 @@ int main(void)
   /* definition and creation of LED_1000 */
   osThreadDef(LED_1000, StartTask02, osPriorityNormal, 0, 128);
   LED_1000Handle = osThreadCreate(osThread(LED_1000), NULL);
-
-  /* definition and creation of LED_400 */
-  osThreadDef(LED_400, StartTask03, osPriorityNormal, 0, 128);
-  LED_400Handle = osThreadCreate(osThread(LED_400), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -445,25 +439,6 @@ void StartTask02(void const * argument)
 	  osDelay(1000);
   }
   /* USER CODE END StartTask02 */
-}
-
-/* USER CODE BEGIN Header_StartTask03 */
-/**
-* @brief Function implementing the LED_400 thread.
-* @param argument: Not used
-* @retval None
-*/
-/* USER CODE END Header_StartTask03 */
-void StartTask03(void const * argument)
-{
-  /* USER CODE BEGIN StartTask03 */
-  /* Infinite loop */
-  for(;;)
-  {
-	  HAL_GPIO_TogglePin(GPIOD, LD5_Pin);
-	  osDelay(800);
-  }
-  /* USER CODE END StartTask03 */
 }
 
 /**
