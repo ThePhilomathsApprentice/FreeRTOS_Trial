@@ -38,6 +38,11 @@
 
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
+#define LED_ORANGE LD3_Pin
+#define LED_GREEN LD4_Pin
+#define LED_RED LD5_Pin
+#define LED_BLUE LD6_Pin
+
 
 /* USER CODE END PM */
 
@@ -416,7 +421,7 @@ void StartDefaultTask(void const * argument)
   /* Infinite loop */
   for(;;)
   {
-	  HAL_GPIO_TogglePin(GPIOD, LD3_Pin);
+	  HAL_GPIO_TogglePin(GPIOD, LED_RED);
 	  osDelay(500);
   }
   /* USER CODE END 5 */
@@ -435,7 +440,7 @@ void StartTask02(void const * argument)
   /* Infinite loop */
   for(;;)
   {
-	  HAL_GPIO_TogglePin(GPIOD, LD4_Pin);
+	  HAL_GPIO_TogglePin(GPIOD, LED_BLUE);
 	  osDelay(1000);
   }
   /* USER CODE END StartTask02 */
