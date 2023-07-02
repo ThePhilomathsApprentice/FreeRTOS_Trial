@@ -68,8 +68,8 @@ all: main-build
 main-build: FreeRTOS_Trial.elf secondary-outputs
 
 # Tool invocations
-FreeRTOS_Trial.elf FreeRTOS_Trial.map: $(OBJS) $(USER_OBJS) /Users/yashj/STM32CubeIDE/STM32F4_DISCO/FreeRTOS_Trial/STM32F407VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "FreeRTOS_Trial.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/Users/yashj/STM32CubeIDE/STM32F4_DISCO/FreeRTOS_Trial/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FreeRTOS_Trial.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+FreeRTOS_Trial.elf FreeRTOS_Trial.map: $(OBJS) $(USER_OBJS) D:\git\FreeRTOS_Trial\STM32F407VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "FreeRTOS_Trial.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\git\FreeRTOS_Trial\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FreeRTOS_Trial.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
