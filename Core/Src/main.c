@@ -41,7 +41,7 @@
 #define LED_ORANGE LD3_Pin
 #define LED_GREEN LD4_Pin
 #define LED_RED LD5_Pin
-#define LED_BLU LD6_Pin
+#define LED_BLUE LD6_Pin
 
 
 /* USER CODE END PM */
