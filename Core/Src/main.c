@@ -440,7 +440,7 @@ void StartTask02(void const * argument)
   /* Infinite loop */
   for(;;)
   {
-	  HAL_GPIO_TogglePin(GPIOD, LED_GREEN);
+	  HAL_GPIO_TogglePin(GPIOD, LED_BLUE);
 	  osDelay(1000);
   }
   /* USER CODE END StartTask02 */
